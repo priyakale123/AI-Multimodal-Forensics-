@@ -1,0 +1,90 @@
+.dash-page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+.dash-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.dash-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.dash-brand img {
+  width: 32px;
+  height: 32px;
+}
+
+.dash-ai {
+  color: var(--blue);
+}
+
+.dash-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dash-logout:hover {
+  background: var(--page-bg);
+}
+
+.dash-main {
+  display: flex;
+  justify-content: center;
+  padding: 64px 20px;
+}
+
+.dash-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 36px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(15, 27, 51, 0.1);
+  animation: dashIn 0.4s ease-out;
+}
+
+.dash-card h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+.dash-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+@keyframes dashIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

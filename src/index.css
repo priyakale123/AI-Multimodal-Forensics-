@@ -1,0 +1,47 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+:root {
+  --navy: #0b1b3a;
+  --navy-text: #b9c6e4;
+  --blue: #2f5bff;
+  --blue-hover: #4a70ff;
+  --page-bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --text: #0f1b33;
+  --text-muted: #5b6785;
+  --border: #d9dfec;
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+  --danger-border: #fda29b;
+  --success: #067647;
+  --success-bg: #ecfdf3;
+  --success-border: #75e0a7;
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+[data-theme="dark"] {
+  --page-bg: #0b1220;
+  --card-bg: #111a2e;
+  --text: #e6edf8;
+  --text-muted: #93a3bf;
+  --border: #24324d;
+  --danger: #fda29b;
+  --danger-bg: #3a1a1a;
+  --danger-border: #7a2e2e;
+  --success: #6ee7b7;
+  --success-bg: #0f2a20;
+  --success-border: #1f6b4f;
+}
