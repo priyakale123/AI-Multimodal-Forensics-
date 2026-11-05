@@ -1,90 +1,180 @@
-.dash-page {
-  min-height: 100vh;
-  background: var(--page-bg);
-  color: var(--text);
+/* Home page: dark gradient fills the whole main area (as in the reference) */
+.home {
+  flex: 1;
+  padding: 32px 36px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(47, 91, 255, 0.25), transparent 45%),
+    linear-gradient(160deg, #0a1a40 0%, #0d2557 55%, #0a1a40 100%);
 }
 
-.dash-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 28px;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border);
-}
-
-.dash-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.dash-brand img {
-  width: 32px;
-  height: 32px;
-}
-
-.dash-ai {
-  color: var(--blue);
-}
-
-.dash-logout {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  height: 36px;
-  padding: 0 14px;
-  font: inherit;
-  font-size: 14px;
-  color: var(--text);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.dash-logout:hover {
-  background: var(--page-bg);
-}
-
-.dash-main {
-  display: flex;
-  justify-content: center;
-  padding: 64px 20px;
-}
-
-.dash-card {
-  width: 100%;
-  max-width: 560px;
-  padding: 36px;
-  text-align: center;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(15, 27, 51, 0.1);
-  animation: dashIn 0.4s ease-out;
-}
-
-.dash-card h1 {
+.home-title {
+  max-width: 26ch;
   margin: 0 0 8px;
-  font-size: 26px;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
-.dash-card p {
-  margin: 0;
+.home-sub {
+  margin: 0 0 22px;
+  font-size: 14px;
+  color: var(--navy-text);
+}
+
+/* ---------- Module chips ---------- */
+.home-modules {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.home-modules li {
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e6edf8;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+}
+
+/* ---------- Stat cards ---------- */
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.home-stat {
+  padding: 16px 18px;
+  color: var(--text);
+  background: var(--card-bg);
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.home-stat:hover {
+  transform: translateY(-2px);
+}
+
+.home-stat strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.home-stat span {
+  font-size: 13px;
   color: var(--text-muted);
 }
 
-@keyframes dashIn {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
+/* ---------- Recent activity ---------- */
+.home-card {
+  padding: 20px 22px;
+  color: var(--text);
+  background: var(--card-bg);
+  border-radius: 12px;
+}
+
+.home-card h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.home-table-wrap {
+  overflow-x: auto;
+}
+
+.home-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.home-table th {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.home-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.pill.real {
+  color: #067647;
+  background: #dcfae6;
+}
+
+.pill.fake {
+  color: #b42318;
+  background: #fee4e2;
+}
+
+.pill.suspicious {
+  color: #b54708;
+  background: #fef0c7;
+}
+
+[data-theme="dark"] .pill.real {
+  color: #6ee7b7;
+  background: #0f2a20;
+}
+
+[data-theme="dark"] .pill.fake {
+  color: #fda29b;
+  background: #3a1a1a;
+}
+
+[data-theme="dark"] .pill.suspicious {
+  color: #fec84b;
+  background: #3a2a08;
+}
+
+/* ---------- Smaller screens ---------- */
+@media (max-width: 1100px) {
+  .home-modules {
+    grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    opacity: 1;
-    transform: none;
+}
+
+@media (max-width: 900px) {
+  .home-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 20px 16px;
+  }
+
+  .home-title {
+    font-size: 22px;
+  }
+
+  .home-modules {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
