@@ -1,3 +1,8 @@
+import ImageAnalysis from "./pages/ImageAnalysis";
+import VideoAnalysis from "./pages/VideoAnalysis";
+import AudioAnalysis from "./pages/AudioAnalysis";
+import URLAnalysis from "./pages/URLAnalysis";
+import ForensicTools from "./pages/ForensicTools";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Layout from "./components/Layout";
@@ -20,6 +25,11 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<ComingSoon />} />
+          <Route path="/image" element={<ImageAnalysis />} />
+          <Route path="/video" element={<VideoAnalysis />} />
+          <Route path="/audio" element={<AudioAnalysis />} />
+          <Route path="/url" element={<URLAnalysis />} />
+          <Route path="/forensics" element={<ForensicTools />} />
         </Route>
       </Routes>
     </BrowserRouter>
